@@ -42,9 +42,8 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    playRound(humanSelection, computerSelection);
-    console.log(`Your score: ${humanScore} Computer Score: ${computerScore}`);
-  
+  playRound(humanSelection, computerSelection);
+  console.log(`Your score: ${humanScore} Computer Score: ${computerScore}`);
 
   if (humanScore === 5 && computerScore != 5)
     console.log(
@@ -56,8 +55,7 @@ function playGame() {
     );
 }
 
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
+for( let i= 1; i < 5; i++)
+{
+  playGame()
+}
