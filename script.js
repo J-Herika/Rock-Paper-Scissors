@@ -5,9 +5,6 @@ let computerChoice;
 let humanScore = 0;
 let computerScore = 0;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
 function getComputerChoice() {
   let randNumber = parseInt(Math.random() * 3);
   computerChoice = options[randNumber];
@@ -42,6 +39,8 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
   console.log(`Your score: ${humanScore} Computer Score: ${computerScore}`);
 
@@ -55,7 +54,6 @@ function playGame() {
     );
 }
 
-for( let i= 1; i < 5; i++)
-{
-  playGame()
+while (humanScore <= 5 || computerScore <= 5) {
+  playGame();
 }
