@@ -30,21 +30,20 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-
 buttonRock.addEventListener("click", () => {
   humanChoice = "rock";
   imgChangerPlayer();
-  endGame()
+  endGame();
 });
 buttonPaper.addEventListener("click", () => {
   humanChoice = "paper";
   imgChangerPlayer();
-  endGame()
+  endGame();
 });
 buttonScissors.addEventListener("click", () => {
   humanChoice = "scissors";
   imgChangerPlayer();
-  endGame()
+  endGame();
 });
 
 //to get the player choice
@@ -90,14 +89,12 @@ function playGame() {
   choiceHuman.textContent = humanChoice;
   choiceComputer.textContent = computerChoice;
 }
-function endGame(){
-  if(humanScore < 5 || computerScore < 5){
-    playGame()
-  }
-  else if(humanScore >= 5){
-    alert('GAME OVER YOU WIN!!');
-  }
-  else if(computerScore >= 5){
+function endGame() {
+  if (humanScore < 5 && computerScore < 5) {
+    playGame();
+  } else if (humanScore >= 5) {
+    alert("GAME OVER YOU WIN!!");
+  } else if (computerScore >= 5) {
     alert("GAME OVER YOU LOSE...");
   }
 }
