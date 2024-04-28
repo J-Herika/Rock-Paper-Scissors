@@ -1,5 +1,6 @@
 const options = ["rock", "paper", "scissors"];
 let humanChoice;
+let humanSelection;
 let computerChoice;
 
 let humanScore = 0;
@@ -21,17 +22,20 @@ function getComputerChoice() {
 buttonRock.addEventListener("click", () => {
   console.log("i chose Rock");
   humanChoice = "rock";
-  return humanChoice;
+
+  playGame();
 });
 buttonPaper.addEventListener("click", () => {
   console.log("i chose Paper");
   humanChoice = "paper";
-  return humanChoice;
+
+  playGame();
 });
 buttonScissors.addEventListener("click", () => {
   console.log("I chose Scissors");
   humanChoice = "scissors";
-  return humanChoice;
+
+  playGame();
 });
 
 //to get the player choice
@@ -65,7 +69,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-  const humanSelection = getHumanChoice();
+  const humanSelection = humanChoice;
   const computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
   console.log(`Your score: ${humanScore} Computer Score: ${computerScore}`);
@@ -79,4 +83,3 @@ function playGame() {
   //     `you lost the game. you:${humanScore} : computer:${computerScore}`
   //   );
 }
-playGame();
