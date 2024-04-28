@@ -12,28 +12,37 @@ const buttonPaper = document.querySelector(".paper");
 const buttonScissors = document.querySelector(".scissors");
 
 // to get access to the scores
-const scorePlayer = document.querySelector(".scorePlayer");
+const scoreHuman = document.querySelector(".scoreHuman");
 const scoreComputer = document.querySelector(".scoreComputer");
+
+//to get access to the choices
+const choiceHuman = document.querySelector(".choiceHuman");
+const choiceComputer = document.querySelector(".choiceComputer");
+
+const imageOne = document.querySelector(".image01");
+const imageTwo = document.querySelector(".image02");
 
 // to get the computer choice
 function getComputerChoice() {
   let randNumber = parseInt(Math.random() * 3);
   computerChoice = options[randNumber];
+  imgChangerComputer();
   return computerChoice;
 }
 
 buttonRock.addEventListener("click", () => {
   humanChoice = "rock";
-
+  imgChangerPlayer();
   playGame();
 });
 buttonPaper.addEventListener("click", () => {
   humanChoice = "paper";
+  imgChangerPlayer();
   playGame();
 });
 buttonScissors.addEventListener("click", () => {
   humanChoice = "scissors";
-
+  imgChangerPlayer();
   playGame();
 });
 
@@ -71,14 +80,43 @@ function playGame() {
   const humanSelection = humanChoice;
   const computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
-  console.log(`Your score: ${humanScore} Computer Score: ${computerScore}`);
 
-  // if (humanScore === 5 && computerScore != 5)
-  //   console.log(
-  //     `YOU WON the game! you:${humanScore} : computer:${computerScore}`
-  //   );
-  // else if (humanScore != 5 && computerScore === 5)
-  //   console.log(
-  //     `you lost the game. you:${humanScore} : computer:${computerScore}`
-  //   );
+  // to update the scores in real time
+  scoreHuman.textContent = humanScore;
+  scoreComputer.textContent = computerScore;
+
+  // to update the chosen choices of both sides
+  choiceHuman.textContent = humanChoice;
+  choiceComputer.textContent = computerChoice;
+}
+function imgChangerPlayer() {
+  switch (humanChoice) {
+    case "rock":
+      imageOne.src = "images/rocks.png";
+      break;
+    case "paper":
+      imageOne.src = "images/paper.png";
+      break;
+    case "scissors":
+      imageOne.src = "images/scissors.png";
+      break;
+    default:
+      imageOne.src = "images/rocks.png";
+      break;
+  }
+}
+function imgChangerComputer() {
+  switch (computerChoice) {
+    case "rock":
+      imageTwo.src = "images/rocks.png";
+      break;
+    case "paper":
+      imageTwo.src = "images/paper.png";
+      break;
+    case "scissors":
+      imageTwo.src = "images/scissors.png";
+      break;
+    default:
+      imageTwo.src = "images/rocks.png";
+  }
 }

@@ -4,16 +4,44 @@
     <meta charset="UTF-8" />
     <title>RockPaperScissors</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="choices">
-      <button class="rock">Rock</button>
-      <button class="paper">Paper</button>
-      <button class="scissors">Scissors</button>
+    <h1>Rock, Paper And Scissors</h1>
+    <div class="img">
+      <div class="content">
+        <img
+          class="image01"
+          src="images/rocks.png"
+          alt="Rock-Paper-Scissors"
+          width="256px"
+          height="256px"
+        />
+        <p class="choiceHuman"></p>
+      </div>
+
+      <div class="content">
+        <img
+          class="image02"
+          src="images/paper.png"
+          alt="Rock-Paper-Scissors"
+          width="256px"
+          height="256px"
+        />
+        <p class="choiceComputer"></p>
+      </div>
     </div>
     <div class="scores">
-      <p class="scorePlayer"></p>
-      <p class="scoreComputer"></p>
+      <p class="scoreHuman">0</p>
+      <p>:</p>
+      <p class="scoreComputer">0</p>
     </div>
+    <div class="options">
+      <button class="rock"><img src="images/rocks.png "width="64px"/></button>
+      <button class="paper"><img src="images/paper.png "width="64px"/></button>
+      <button class="scissors"><img src="images/scissors.png "width="64px"/></button>
+    </div>
+
+    <div class="choices"></div>
   </body>
 </html>
