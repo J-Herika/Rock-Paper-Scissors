@@ -96,7 +96,7 @@ function endGame() {
     alert("GAME OVER YOU WIN!!");
   } else if (computerScore >= 5) {
     alert("GAME OVER YOU LOSE...");
-  }
+  } 
 }
 function imgChangerPlayer() {
   switch (humanChoice) {
