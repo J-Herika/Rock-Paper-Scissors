@@ -7,10 +7,13 @@ let humanScore = 0;
 let computerScore = 0;
 
 //get access to the buttons
-
 const buttonRock = document.querySelector(".rock");
 const buttonPaper = document.querySelector(".paper");
 const buttonScissors = document.querySelector(".scissors");
+
+// to get access to the scores
+const scorePlayer = document.querySelector(".scorePlayer");
+const scoreComputer = document.querySelector(".scoreComputer");
 
 // to get the computer choice
 function getComputerChoice() {
@@ -20,19 +23,15 @@ function getComputerChoice() {
 }
 
 buttonRock.addEventListener("click", () => {
-  console.log("i chose Rock");
   humanChoice = "rock";
 
   playGame();
 });
 buttonPaper.addEventListener("click", () => {
-  console.log("i chose Paper");
   humanChoice = "paper";
-
   playGame();
 });
 buttonScissors.addEventListener("click", () => {
-  console.log("I chose Scissors");
   humanChoice = "scissors";
 
   playGame();
