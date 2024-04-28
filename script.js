@@ -6,9 +6,10 @@ let humanScore = 0;
 let computerScore = 0;
 
 //get access to the buttons
-const buttonRock = document.querySelector("rock");
-const buttonPaper = document.querySelector("paper");
-const buttonScissors = document.querySelector("scissors");
+
+const buttonRock = document.querySelector(".rock");
+const buttonPaper = document.querySelector(".paper");
+const buttonScissors = document.querySelector(".scissors");
 
 // to get the computer choice
 function getComputerChoice() {
@@ -17,16 +18,31 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-// to get the player choice
-function getHumanChoice() {
-  let choice = prompt("Enter Rock Paper or Scissors!");
-  choice.toLowerCase();
+buttonRock.addEventListener("click", () => {
+  console.log("i chose Rock");
+  humanChoice = "rock";
+  return humanChoice;
+});
+buttonPaper.addEventListener("click", () => {
+  console.log("i chose Paper");
+  humanChoice = "paper";
+  return humanChoice;
+});
+buttonScissors.addEventListener("click", () => {
+  console.log("I chose Scissors");
+  humanChoice = "scissors";
+  return humanChoice;
+});
 
-  if (choice === options[0] || choice === options[1] || choice === options[2]) {
-    return choice;
-  } else {
-    console.log("you didn't enter a valid Choice");
-  }
+//to get the player choice
+function getHumanChoice() {
+  // let choice = prompt("Enter Rock Paper or Scissors!");
+  // choice.toLowerCase();
+  // if (choice === options[0] || choice === options[1] || choice === options[2]) {
+  //   return choice;
+  // } else {
+  //   console.log("you didn't enter a valid Choice");
+  // }
 }
 
 // to get the result of the game round
@@ -63,7 +79,4 @@ function playGame() {
   //     `you lost the game. you:${humanScore} : computer:${computerScore}`
   //   );
 }
-
-while (humanScore <= 5 || computerScore <= 5) {
-  playGame();
-}
+playGame();
